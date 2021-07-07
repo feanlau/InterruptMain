@@ -39,7 +39,8 @@ public class InterruptMain {
     private static void interrupt3() throws InterruptedException {
         Thread thread = new Thread(() -> {
             try {
-                //判断当前线程是否已中断,注意interrupted方法是静态的,执行后会对中断状态进行复位
+                // 判断当前线程是否已中断,注意interrupted方法是静态的,执行后会对中断状态进行复位
+                System.out.println("线程是否中断"+Thread.interrupted());
                 while (!Thread.interrupted()) {
                     TimeUnit.SECONDS.sleep(2);
                 }
